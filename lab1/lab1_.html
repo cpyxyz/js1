@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            width: 550px;
+            margin-left: 365px;
+            background-color: aquamarine;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Inventory Management System</h1>
+    <form id="form">
+        <input type="text" name="model" id="model" placeholder="Model">
+        <input type="text" name="color" id="color" placeholder="Color">
+        <input type="text" name="cost" id="cost" placeholder="Cost">
+        <input type="text" name="availablity" id="availablity" placeholder="Number of items">
+        <button>ADD</button>
+    </form>
+    <table id="p1">
+        <script>
+
+            var table = "<tr><th>Model</th><th>Color</th><th>Cost</th><th>Availablity</th></tr>";
+            const formData = document.querySelector('#form');
+            formData.addEventListener('submit', (e) => {
+                e.preventDefault();
+                table += "<tr><td>" + form.model.value + "</td><td>" + form.color.value + "</td><td>" + form.cost.value + "</td><td>" + form.availablity.value + "</td></tr>";
+                document.getElementById("p1").innerHTML = table;
+                formData.reset();
+            })
+        </script>
+</body>
+
+</html>

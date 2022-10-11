@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            width: 550px;
+            margin-left: 365px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Inventory Management System</h1>
+
+    <table id="p1"></table>
+
+    <script>
+        class inventory {
+            constructor() {
+                this.model = prompt("Enter model");
+                this.color = prompt("Enter color");
+                this.cost = prompt("Enter cost")
+                this.availablity = prompt("Enter Number of available cars");
+
+                table += "<tr><td>" + this.model + "</td><td>" + this.color + "</td><td>" + this.cost + "</td><td>" + this.availablity + "</td></tr>";
+                document.getElementById("p1").innerHTML = table;
+            }
+        }
+        let table = "<tr><th>Model</th><th>Color</th><th>Cost</th><th>Availablity</th></tr>";
+        
+        let inv1 = new inventory();
+        let inv2 = new inventory();
+
+
+    </script>
+</body>
+
+</html>

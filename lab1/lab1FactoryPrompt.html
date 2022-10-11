@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        inventory
+    </title>
+</head>
+
+<body>
+    <div id="div"></div>
+    <script>
+        function inventory(productId, name, price, quantity) {
+            return {
+                productId: productId,
+                name: name,
+                price: price,
+                quantity: quantity,
+                printinfo: function () {
+                    return `productId : ${productId}<br> name : ${name}<br> price : ${price}<br> quantity : ${quantity}<hr>`
+                }
+            };
+        }
+        function call() {
+            var inv = document.createElement('div')
+            var productId = prompt("Enter the productId:")
+            var name = prompt("Enter the name:")
+            var price = prompt("Enter the price:")
+            var quantity = prompt("Enter the quantity:")
+            var print = inventory(productId, name, price, quantity)
+            inv.innerHTML = print.printinfo()
+            document.getElementById('div').appendChild(inv)
+            var userInput = prompt("To insert more enter : y")
+            if (userInput == "y") {
+                call()
+            }
+        }
+        call()
+    </script>
+
+</body>
+
+</html>

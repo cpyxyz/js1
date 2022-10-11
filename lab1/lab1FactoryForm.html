@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        inventory
+    </title>
+</head>
+
+<body style="background-color:darkgray;">
+
+    <h3>INVENTORY SYSTEM</h3>
+
+
+    <form>
+        <div style="background-color:grey;">
+            <label>productId</label><input type="text" name="productId" style="margin:10px" /><br>
+            <label>name</label><input type="text" name="name" style="margin: 10px;" /><br>
+            <label>price</label><input type="text" name="price" style="margin: 10px;" /><br>
+            <label>quantity</label><input type="text" name="quantity" style="margin: 10px;" /><br>
+            <button type="button" onclick="fun(this.form)">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <div id="root"></div>
+    <script>
+        function inventory(productId, name, price, quantity) {
+            return {
+                productId: productId,
+                name: name,
+                price: price,
+                quantity: quantity,
+                printinfo: function () {
+                    return `productId : ${productId}<br> name : ${name}<br> price : ${price}<br> quantity : ${quantity}<hr>`
+                }
+            };
+        }
+        function fun(form) {
+            var inv = document.createElement('div')
+            var productId = form.productId.value
+            var name = form.name.value
+            var price = form.price.value
+            var quantity = form.quantity.value
+            var print = inventory(productId, name, price, quantity)
+            inv.innerHTML = print.printinfo()
+            document.getElementById('root').appendChild(inv)
+            localStorage.setItem("productId", productId)
+            localStorage.setItem("name", name)
+            localStorage.setItem("price", price)
+            localStorage.setItem("quantity", quantity)
+            var userInput = prompt("To insert more enter : y")
+            if (userInput == "y") {
+                call()
+            }
+        }
+    </script>
+
+</body>
+
+</html>
